@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DealScout | Centralized Store Discount Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-dealscout sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-extrabold fs-3" href="index.html">
+                <i class="bi bi-tag-fill me-2 text-warning"></i>Deal<span>Scout</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fashion.html">Fashion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="electronics.html">Electronics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="beauty.html">Beauty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-living.html">Home & Living</a></li>
+                </ul>
+                <button class="btn btn-accent position-relative" data-bs-toggle="offcanvas" data-bs-target="#savingsDrawer">
+                    <i class="bi bi-calculator me-1"></i> Savings Tracker
+                    <span id="savedCountBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container my-4">
+        <div class="hero-banner shadow-lg">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <span class="badge bg-warning text-dark fw-bold mb-3 px-3 py-2 rounded-pill">
+                        <i class="bi bi-lightning-charge-fill me-1"></i> LIMITED-TIME STORE PROMOTIONS
+                    </span>
+                    <h1 class="display-5 fw-extrabold mb-3">Compare & Grab the Best Store Discounts in One Place</h1>
+                    <p class="lead opacity-75 mb-4">
+                        Track real-time promotion validity periods across top Fashion, Electronics, Beauty, and Home & Living stores before the timer runs out.
+                    </p>
+                    <div class="flash-timer-box">
+                        <span class="fw-bold text-uppercase small">Mega Weekend Deals End In:</span>
+                        <span class="fs-5 fw-extrabold text-warning" data-expiry="2026-11-05T23:59:59">Loading...</span>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-white text-dark p-4 rounded-4 shadow">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-search me-2 text-primary"></i>Quick Deal Finder</h5>
+                        <div class="mb-3">
+                            <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Search item, store (e.g. Nike, Samsung)...">
+                        </div>
+                        <div class="mb-2">
+                            <select id="sortSelect" class="form-select form-select-lg">
+                                <option value="default">Sort By: Featured Deals</option>
+                                <option value="discount-desc">Highest Discount (%)</option>
+                                <option value="ending-soon">Ending Soonest (Expiry Alert)</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+                <h3 class="fw-extrabold mb-1">Browse by Category</h3>
+                <p class="text-muted mb-0">Explore active discounts across 4 specialized departments</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
+                <a href="fashion.html" class="cat-card">
+                    <div class="cat-icon"><i class="bi bi-handbag"></i></div>
+                    <h5 class="fw-bold mb-1">Fashion</h5>
+                    <small class="text-muted">Clothing, Shoes, Bags, Jewelry, Sunglasses</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="electronics.html" class="cat-card">
+                    <div class="cat-icon"><i class="bi bi-laptop"></i></div>
+                    <h5 class="fw-bold mb-1">Electronics</h5>
+                    <small class="text-muted">Phones, Laptops, Tablets, Headphones, Cameras</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="beauty.html" class="cat-card">
+                    <div class="cat-icon"><i class="bi bi-stars"></i></div>
+                    <h5 class="fw-bold mb-1">Beauty</h5>
+                    <small class="text-muted">Cosmetics, Skincare, Perfumes, Hair, Nails</small>
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="home-living.html" class="cat-card">
+                    <div class="cat-icon"><i class="bi bi-house-heart"></i></div>
+                    <h5 class="fw-bold mb-1">Home & Living</h5>
+                    <small class="text-muted">Furniture, Decor, Bedding, Kitchen, Cleaning</small>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+            <div>
+                <h3 class="fw-extrabold mb-1">Hot Flash Deals Across Stores</h3>
+                <p class="text-muted mb-0">Verified store discounts with live validity countdowns</p>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+                <button class="filter-btn active" data-filter="all">All Hot Deals</button>
+                <button class="filter-btn" data-filter="fashion">Fashion</button>
+                <button class="filter-btn" data-filter="electronics">Electronics</button>
+                <button class="filter-btn" data-filter="beauty">Beauty</button>
+                <button class="filter-btn" data-filter="home">Home & Living</button>
+            </div>
+        </div>
+
+        <div class="row g-4" id="dealsContainer">
+            <!-- Deal Card 1 -->
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="fashion" data-title="Nike Air Zoom Pegasus" data-store="Nike Official Store" data-price="140000" data-discount="30">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Shoes">
+                        <span class="badge-discount">-30% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-01T20:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="mb-2"><span class="store-tag"><i class="bi bi-shop me-1"></i>Nike Official Store</span></div>
+                        <h6 class="fw-bold mb-1">Nike Air Zoom Running Shoes</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 1, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">140,000 MMK</span>
+                                <span class="price-old">200,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 60,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Nike Air Zoom Shoes', 'Nike Official Store', 200000, 140000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="electronics" data-title="Sony WH-1000XM5 Headphones" data-store="ict.com.mm" data-price="680000" data-discount="20">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Headphones">
+                        <span class="badge-discount">-20% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-10-31T18:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="mb-2"><span class="store-tag"><i class="bi bi-shop me-1"></i>ICT Digital Hub</span></div>
+                        <h6 class="fw-bold mb-1">Sony Wireless Noise Canceling Headphones</h6>
+                        <small class="text-muted mb-3">Valid until: Oct 31, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">680,000 MMK</span>
+                                <span class="price-old">850,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 170,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Sony Wireless Headphones', 'ICT Digital Hub', 850000, 680000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="beauty" data-title="Laneige Glow Skincare Set" data-store="Beauty Diary" data-price="75000" data-discount="40">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Skincare">
+                        <span class="badge-discount">-40% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-02T22:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="mb-2"><span class="store-tag"><i class="bi bi-shop me-1"></i>Beauty Diary Store</span></div>
+                        <h6 class="fw-bold mb-1">Hydrating Glow Skincare Full Bundle</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 2, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">75,000 MMK</span>
+                                <span class="price-old">125,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 50,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Hydrating Skincare Bundle', 'Beauty Diary Store', 125000, 75000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="home" data-title="Minimalist Nordic Sofa Chair" data-store="Index Living Mall" data-price="180000" data-discount="25">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Furniture">
+                        <span class="badge-discount">-25% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-04T23:59:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="mb-2"><span class="store-tag"><i class="bi bi-shop me-1"></i>Index Living Mall</span></div>
+                        <h6 class="fw-bold mb-1">Minimalist Nordic Accent Armchair</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 4, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">180,000 MMK</span>
+                                <span class="price-old">240,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 60,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Nordic Accent Armchair', 'Index Living Mall', 240000, 180000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="savingsDrawer">
+        <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title fw-bold"><i class="bi bi-calculator me-2 text-warning"></i>Smart Savings Tracker</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="savedDealsList" class="flex-grow-1 overflow-auto"></div>
+            <div class="border-top pt-3 mt-3 bg-light p-3 rounded-3">
+                <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Original Store Price:</span>
+                    <span id="totalOriginalPrice" class="text-decoration-line-through text-muted">0 MMK</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="fw-semibold">Discounted Total:</span>
+                    <span id="totalFinalPrice" class="fw-bold fs-5">0 MMK</span>
+                </div>
+                <div class="d-flex justify-content-between p-2 rounded bg-success-subtle text-success fw-extrabold">
+                    <span>Total Money Saved:</span>
+                    <span id="totalSavedAmount">0 MMK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <h5 class="fw-bold mb-1">Deal<span class="text-warning">Scout</span></h5>
+            <p class="small text-secondary mb-0">Developed by Group 1 • GUSTO College Web Design Competition 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

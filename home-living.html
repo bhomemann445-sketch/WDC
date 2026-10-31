@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Living Deals | DealScout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-dealscout sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-extrabold fs-3" href="index.html">
+                <i class="bi bi-tag-fill me-2 text-warning"></i>Deal<span>Scout</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fashion.html">Fashion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="electronics.html">Electronics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="beauty.html">Beauty</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home-living.html">Home & Living</a></li>
+                </ul>
+                <button class="btn btn-accent position-relative" data-bs-toggle="offcanvas" data-bs-target="#savingsDrawer">
+                    <i class="bi bi-calculator me-1"></i> Savings Tracker
+                    <span id="savedCountBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container my-4">
+        <div class="hero-banner shadow-sm py-4 px-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 px-3 py-1 rounded-pill mb-2">
+                        <i class="bi bi-house-heart-fill text-warning"></i>
+                        <span class="small fw-semibold">HOME APPLIANCES & FURNITURE PROMOTIONS</span>
+                    </div>
+                    <h1 class="display-6 fw-extrabold mb-2">Home & Living Discounts</h1>
+                    <p class="mb-0 opacity-75">
+                        Find exclusive deals on Furniture, Decor, Bedding, Kitchenware, and Cleaning Products from premier home stores.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row g-2">
+                        <div class="col-sm-7">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-0"><i class="bi bi-search text-muted"></i></span>
+                                <input type="text" id="searchInput" class="form-control border-0 py-2" placeholder="Search furniture or store...">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <select id="sortSelect" class="form-select border-0 py-2">
+                                <option value="default">Sort: Featured</option>
+                                <option value="discount-desc">Highest Discount %</option>
+                                <option value="ending-soon">Ending Soonest</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3 bg-white p-3 rounded-4 shadow-sm border">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-funnel-fill text-primary fs-5"></i>
+                <span class="fw-bold">Sub-Categories:</span>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+                <button class="filter-btn active" data-filter="all">All Home (8)</button>
+                <button class="filter-btn" data-filter="furniture"><i class="bi bi-chair me-1"></i>Furniture</button>
+                <button class="filter-btn" data-filter="decor"><i class="bi bi-lamp me-1"></i>Decor</button>
+                <button class="filter-btn" data-filter="bedding"><i class="bi bi-sliders me-1"></i>Bedding</button>
+                <button class="filter-btn" data-filter="kitchenware"><i class="bi bi-cup-hot me-1"></i>Kitchenware</button>
+                <button class="filter-btn" data-filter="cleaning"><i class="bi bi-shield-check me-1"></i>Cleaning</button>
+            </div>
+        </div>
+
+        <div class="row g-4" id="dealsContainer">
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="furniture" data-title="Minimalist Nordic Accent Armchair" data-store="Index Living Mall" data-price="180000" data-discount="25">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Sofa Chair">
+                        <span class="badge-discount">-25% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-04T23:59:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Index Living</span>
+                            <span class="badge bg-light text-secondary border">Furniture</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Minimalist Nordic Accent Armchair</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 4, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">180,000 MMK</span>
+                                <span class="price-old">240,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 60,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Nordic Accent Armchair', 'Index Living', 240000, 180000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="furniture" data-title="Ergonomic Mesh Office Desk Chair" data-store="Furnitech Myanmar" data-price="130000" data-discount="35">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?auto=format&fit=crop&w=600&q=80" alt="Office Chair">
+                        <span class="badge-discount">-35% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-01T20:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Furnitech MM</span>
+                            <span class="badge bg-light text-secondary border">Furniture</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Ergonomic Mesh Office Desk Chair</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 1, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">130,000 MMK</span>
+                                <span class="price-old">200,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 70,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Ergonomic Mesh Chair', 'Furnitech MM', 200000, 130000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="decor" data-title="Modern LED Pendant Lamp & Warm Light" data-store="Home Decor Gallery" data-price="45000" data-discount="30">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80" alt="Lamp Decor">
+                        <span class="badge-discount">-30% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-03T18:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Home Decor Gallery</span>
+                            <span class="badge bg-light text-secondary border">Decor</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Modern LED Dining Pendant Lamp</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 3, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">45,000 MMK</span>
+                                <span class="price-old">65,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 20,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Modern LED Pendant Lamp', 'Home Decor Gallery', 65000, 45000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="bedding" data-title="Luxury Cotton Queen Bed Sheet Set" data-store="Sleep Well Myanmar" data-price="55000" data-discount="40">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=600&q=80" alt="Bedding Set">
+                        <span class="badge-discount">-40% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-02T22:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Sleep Well Store</span>
+                            <span class="badge bg-light text-secondary border">Bedding</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Luxury 1000-Thread Cotton Bedsheet Set</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 2, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">55,000 MMK</span>
+                                <span class="price-old">92,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 37,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Luxury Cotton Bedsheet Set', 'Sleep Well Store', 92000, 55000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="kitchenware" data-title="Philips Air Fryer XXL (Oil-Free)" data-store="City Mall Kitchenware" data-price="210000" data-discount="20">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Air Fryer">
+                        <span class="badge-discount">-20% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-05T20:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>City Mall</span>
+                            <span class="badge bg-light text-secondary border">Kitchenware</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Philips Digital Air Fryer XXL 5.5L</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 5, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">210,000 MMK</span>
+                                <span class="price-old">265,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 55,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Philips Air Fryer XXL', 'City Mall', 265000, 210000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="kitchenware" data-title="Stainless Steel Non-Stick Cookware Set" data-store="Chef Master Kitchen" data-price="95000" data-discount="30">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80" alt="Cookware">
+                        <span class="badge-discount">-30% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-10-31T21:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Chef Master</span>
+                            <span class="badge bg-light text-secondary border">Kitchenware</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">6-Piece Non-Stick Cookware Set</h6>
+                        <small class="text-muted mb-3">Valid until: Oct 31, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">95,000 MMK</span>
+                                <span class="price-old">135,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 40,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Non-Stick Cookware Set', 'Chef Master', 135000, 95000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="cleaning" data-title="Robot Vacuum Cleaner Smart Edition" data-store="Pro Home Appliances" data-price="320000" data-discount="25">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" alt="Robot Vacuum">
+                        <span class="badge-discount">-25% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-04T18:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Pro Home Store</span>
+                            <span class="badge bg-light text-secondary border">Cleaning</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Smart Robot Vacuum & Mop Cleaner</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 4, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">320,000 MMK</span>
+                                <span class="price-old">430,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 110,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Smart Robot Vacuum Cleaner', 'Pro Home Store', 430000, 320000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="cleaning" data-title="Eco-Friendly Household Cleaning Bundle" data-store="Pro-Clean Supermarket" data-price="22000" data-discount="45">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=600&q=80" alt="Cleaning Supplies">
+                        <span class="badge-discount">-45% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-01T23:59:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Pro-Clean Supermart</span>
+                            <span class="badge bg-light text-secondary border">Cleaning</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Eco-Friendly Deep Cleaning Kit</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 1, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">22,000 MMK</span>
+                                <span class="price-old">40,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 18,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Eco-Friendly Cleaning Kit', 'Pro-Clean Supermart', 40000, 22000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="savingsDrawer">
+        <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title fw-bold"><i class="bi bi-calculator me-2 text-warning"></i>Smart Savings Tracker</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="savedDealsList" class="flex-grow-1 overflow-auto"></div>
+            <div class="border-top pt-3 mt-3 bg-light p-3 rounded-3">
+                <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Original Store Price:</span>
+                    <span id="totalOriginalPrice" class="text-decoration-line-through text-muted">0 MMK</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="fw-semibold">Discounted Total:</span>
+                    <span id="totalFinalPrice" class="fw-bold fs-5">0 MMK</span>
+                </div>
+                <div class="d-flex justify-content-between p-2 rounded bg-success-subtle text-success fw-extrabold">
+                    <span>Total Money Saved:</span>
+                    <span id="totalSavedAmount">0 MMK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <h5 class="fw-bold mb-1">Deal<span class="text-warning">Scout</span></h5>
+            <p class="small text-secondary mb-0">Developed by Group 1 • GUSTO College Web Design Competition 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
