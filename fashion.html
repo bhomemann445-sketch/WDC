@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Deals | DealScout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-dealscout sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-extrabold fs-3" href="index.html">
+                <i class="bi bi-tag-fill me-2 text-warning"></i>Deal<span>Scout</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="fashion.html">Fashion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="electronics.html">Electronics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="beauty.html">Beauty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-living.html">Home & Living</a></li>
+                </ul>
+                <button class="btn btn-accent position-relative" data-bs-toggle="offcanvas" data-bs-target="#savingsDrawer">
+                    <i class="bi bi-calculator me-1"></i> Savings Tracker
+                    <span id="savedCountBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container my-4">
+        <div class="hero-banner shadow-sm py-4 px-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 px-3 py-1 rounded-pill mb-2">
+                        <i class="bi bi-handbag-fill text-warning"></i>
+                        <span class="small fw-semibold">FASHION & APPAREL PROMOTIONS</span>
+                    </div>
+                    <h1 class="display-6 fw-extrabold mb-2">Fashion Store Discounts</h1>
+                    <p class="mb-0 opacity-75">
+                        Compare limited-time deals on Clothing, Shoes, Bags, Jewelry, and Sunglasses from top brand outlets.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row g-2">
+                        <div class="col-sm-7">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-0"><i class="bi bi-search text-muted"></i></span>
+                                <input type="text" id="searchInput" class="form-control border-0 py-2" placeholder="Search brand or item...">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <select id="sortSelect" class="form-select border-0 py-2">
+                                <option value="default">Sort: Featured</option>
+                                <option value="discount-desc">Highest Discount %</option>
+                                <option value="ending-soon">Ending Soonest</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3 bg-white p-3 rounded-4 shadow-sm border">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-funnel-fill text-primary fs-5"></i>
+                <span class="fw-bold">Sub-Categories:</span>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+                <button class="filter-btn active" data-filter="all">All Fashion (8)</button>
+                <button class="filter-btn" data-filter="clothing"><i class="bi bi-person-standing-dress me-1"></i>Clothing</button>
+                <button class="filter-btn" data-filter="shoes"><i class="bi bi-Footprints me-1"></i>Shoes</button>
+                <button class="filter-btn" data-filter="bags"><i class="bi bi-handbag me-1"></i>Bags</button>
+                <button class="filter-btn" data-filter="jewelry"><i class="bi bi-gem me-1"></i>Jewelry</button>
+                <button class="filter-btn" data-filter="sunglasses"><i class="bi bi-sunglasses me-1"></i>Sunglasses</button>
+            </div>
+        </div>
+
+        <div class="row g-4" id="dealsContainer">
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="clothing" data-title="Oversized Linen Casual Shirt" data-store="Zara Official Outlet" data-price="45000" data-discount="35">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80" alt="Shirt">
+                        <span class="badge-discount">-35% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-02T20:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Zara Outlet</span>
+                            <span class="badge bg-light text-secondary border">Clothing</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Premium Linen Casual Shirt</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 2, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">45,500 MMK</span>
+                                <span class="price-old">70,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 24,500 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Premium Linen Casual Shirt', 'Zara Outlet', 70000, 45500)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="clothing" data-title="Uniqlo Ultra Stretch Denim Jacket" data-store="Uniqlo Yangon Store" data-price="64000" data-discount="20">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?auto=format&fit=crop&w=600&q=80" alt="Denim Jacket">
+                        <span class="badge-discount">-20% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-04T22:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Uniqlo Store</span>
+                            <span class="badge bg-light text-secondary border">Clothing</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Classic Fit Denim Jacket</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 4, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">64,000 MMK</span>
+                                <span class="price-old">80,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 16,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Classic Fit Denim Jacket', 'Uniqlo Store', 80000, 64000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="shoes" data-title="Nike Air Zoom Running Shoes" data-store="Nike Official Store" data-price="140000" data-discount="30">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Nike Shoes">
+                        <span class="badge-discount">-30% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-01T20:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Nike Official</span>
+                            <span class="badge bg-light text-secondary border">Shoes</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Nike Air Zoom Pegasus Sneakers</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 1, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">140,000 MMK</span>
+                                <span class="price-old">200,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 60,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Nike Air Zoom Sneakers', 'Nike Official', 200000, 140000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="shoes" data-title="Adidas Ultraboost Street Sneakers" data-store="Adidas Brand Center" data-price="135000" data-discount="25">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80" alt="Adidas Sneakers">
+                        <span class="badge-discount">-25% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-03T18:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Adidas Center</span>
+                            <span class="badge bg-light text-secondary border">Shoes</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Adidas Ultraboost Everyday Shoes</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 3, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">135,000 MMK</span>
+                                <span class="price-old">180,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 45,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Adidas Ultraboost Shoes', 'Adidas Center', 180000, 135000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="bags" data-title="Charles & Keith Leather Crossbody Bag" data-store="Charles & Keith" data-price="84000" data-discount="30">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80" alt="Leather Bag">
+                        <span class="badge-discount">-30% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-02T23:59:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Charles & Keith</span>
+                            <span class="badge bg-light text-secondary border">Bags</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Classic Leather Crossbody Bag</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 2, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">84,000 MMK</span>
+                                <span class="price-old">120,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 36,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Leather Crossbody Bag', 'Charles & Keith', 120000, 84000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="bags" data-title="Minimalist Canvas Everyday Tote Bag" data-store="Pedro Boutique" data-price="55000" data-discount="45">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80" alt="Tote Bag">
+                        <span class="badge-discount">-45% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-10-31T21:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Pedro Boutique</span>
+                            <span class="badge bg-light text-secondary border">Bags</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Structured Everyday Tote Bag</h6>
+                        <small class="text-muted mb-3">Valid until: Oct 31, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">55,000 MMK</span>
+                                <span class="price-old">100,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 45,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Structured Tote Bag', 'Pedro Boutique', 100000, 55000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="jewelry" data-title="18K Gold Plated Pendant Necklace" data-store="Pandora Gallery" data-price="90000" data-discount="40">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Jewelry Necklace">
+                        <span class="badge-discount">-40% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-05T19:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Pandora Gallery</span>
+                            <span class="badge bg-light text-secondary border">Jewelry</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Crystal Charm Pendant Necklace</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 5, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">90,000 MMK</span>
+                                <span class="price-old">150,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 60,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Crystal Pendant Necklace', 'Pandora Gallery', 150000, 90000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 deal-col" data-subcat="sunglasses" data-title="Ray-Ban Polarized Aviator Sunglasses" data-store="Focus Optical Store" data-price="110000" data-discount="50">
+                <div class="deal-card">
+                    <div class="deal-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80" alt="Sunglasses">
+                        <span class="badge-discount">-50% OFF</span>
+                        <span class="badge-timer" data-expiry="2026-11-01T15:00:00">Loading...</span>
+                    </div>
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="store-tag"><i class="bi bi-shop me-1"></i>Focus Optical</span>
+                            <span class="badge bg-light text-secondary border">Sunglasses</span>
+                        </div>
+                        <h6 class="fw-bold mb-1">Polarized UV400 Aviator Shades</h6>
+                        <small class="text-muted mb-3">Valid until: Nov 1, 2026</small>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="price-new">110,000 MMK</span>
+                                <span class="price-old">220,000 MMK</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="savings-pill">Save 110,000 MMK</span>
+                                <button class="btn btn-sm btn-accent save-deal-btn" onclick="addSavedDeal('Polarized Aviator Shades', 'Focus Optical', 220000, 110000)">
+                                    <i class="bi bi-bookmark-plus"></i> Save Deal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="savingsDrawer">
+        <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title fw-bold"><i class="bi bi-calculator me-2 text-warning"></i>Smart Savings Tracker</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="savedDealsList" class="flex-grow-1 overflow-auto"></div>
+            <div class="border-top pt-3 mt-3 bg-light p-3 rounded-3">
+                <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Original Store Price:</span>
+                    <span id="totalOriginalPrice" class="text-decoration-line-through text-muted">0 MMK</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="fw-semibold">Discounted Total:</span>
+                    <span id="totalFinalPrice" class="fw-bold fs-5">0 MMK</span>
+                </div>
+                <div class="d-flex justify-content-between p-2 rounded bg-success-subtle text-success fw-extrabold">
+                    <span>Total Money Saved:</span>
+                    <span id="totalSavedAmount">0 MMK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <h5 class="fw-bold mb-1">Deal<span class="text-warning">Scout</span></h5>
+            <p class="small text-secondary mb-0">Developed by Group 1 • GUSTO College Web Design Competition 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
